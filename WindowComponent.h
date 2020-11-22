@@ -4,23 +4,11 @@
 
 #pragma once
 
-#include "GraphicalComponentInterface.h"
+#include "AbstractGraphicalComponent.h"
 
-class WindowComponent : public GraphicalComponentInterface {
+class WindowComponent : public AbstractGraphicalComponent {
 public:
-    WindowComponent();
-
     ~WindowComponent() override;
-
-    bool isHidden() override;
-
-    void moveOn(int x, int y) override;
-
-    void setPosition(int x, int y) override;
-
-    void setPosition(Point) override;
-
-    Point getPosition() override;
 
 };
 

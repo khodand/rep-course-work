@@ -24,10 +24,10 @@ void WindowComponent::setPosition(int x, int y) {
 
 }
 
-void WindowComponent::setPosition(GraphicalComponentInterface::Point) {
+void WindowComponent::setPosition(AbstractGraphicalComponent::Point) {
 
 }
 
-GraphicalComponentInterface::Point WindowComponent::getPosition() {
-    return GraphicalComponentInterface::Point();
+AbstractGraphicalComponent::Point WindowComponent::getPosition() {
+    return AbstractGraphicalComponent::Point();
 }
