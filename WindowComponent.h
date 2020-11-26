@@ -4,11 +4,26 @@
 
 #pragma once
 
-#include "AbstractGraphicalComponent.h"
+#include <string>
+#include "AbstractParentComponent.h"
 
-class WindowComponent : public AbstractGraphicalComponent {
+using namespace std;
+
+class WindowComponent : public AbstractParentComponent {
 public:
-    ~WindowComponent() override;
+    WindowComponent(const string &title, bool isHidden, Point downLeftCorner, Point upRightCorner);
 
+    void setVisible(bool visible) override;
+
+    void print() override;
+
+    void setTitle(const string &title);
+
+    string getTitle();
+
+private:
+    const string mClassName {"Window"};
+
+    string mTitle {};
 };
 

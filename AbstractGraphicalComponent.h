@@ -28,16 +28,13 @@ public:
         }
     };
 
-    AbstractGraphicalComponent(AbstractGraphicalComponent *parent
-                               , bool isHidden
-                               , Point downLeftCorner
-                               , Point upRightCorner);
+    AbstractGraphicalComponent(bool isHidden, Point downLeftCorner, Point upRightCorner);
 
     virtual ~AbstractGraphicalComponent() = default;
 
-    bool isHidden();
+    virtual bool isHidden();
 
-    void setVisible(bool visible);
+    virtual void setVisible(bool visible);
 
     virtual void moveOn(int x, int y);
 
@@ -48,14 +45,18 @@ public:
     virtual void setPosition(Point p);
 
     /// Returns center of the component
-    Point getPosition();
+    Point getPosition() const;
 
     Point getDownLeftCorner();
 
     Point getUpRightCorner();
 
+    void setParent(AbstractGraphicalComponent *parent);
+
+    virtual void print();
+
 private:
-    AbstractGraphicalComponent *mParent;
+    AbstractGraphicalComponent *mParent {nullptr};
 
     bool mIsHidden;
 

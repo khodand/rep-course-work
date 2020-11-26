@@ -6,11 +6,24 @@
 
 #include "AbstractGraphicalComponent.h"
 
+// TODO: create my own List
+#include <list>
+
 class AbstractParentComponent : public AbstractGraphicalComponent {
 public:
-    void addChild(AbstractGraphicalComponent *);
+    AbstractParentComponent(bool isHidden, Point downLeftCorner, Point upRightCorner);
 
-private:
+    ~AbstractParentComponent() override;
 
+    void addChild(AbstractGraphicalComponent *child);
+
+    void removeChild(AbstractGraphicalComponent *child);
+
+    void moveOn(Point p) override;
+
+    void print() override;
+
+protected:
+    std::list <AbstractGraphicalComponent *> mChildren {}; // Does not have ownership of the children.
 };
 

@@ -2,32 +2,31 @@
 // Created by khodand on 22.11.2020.
 //
 
+#include <iostream>
+#include <utility>
 #include "WindowComponent.h"
 
-WindowComponent::WindowComponent() {
+WindowComponent::WindowComponent(const string &title, bool isHidden, Point downLeftCorner, Point upRightCorner)
+        : AbstractParentComponent(isHidden, downLeftCorner, upRightCorner)
+        , mTitle(title)
+{}
 
+void WindowComponent::setVisible(bool visible) {
+    AbstractGraphicalComponent::setVisible(visible);
+    for (auto &c : mChildren) {
+        c->setVisible(visible);
+    }
 }
 
-WindowComponent::~WindowComponent() {
-
+void WindowComponent::print() {
+    cout << mClassName << " " << mTitle << endl;
+    AbstractParentComponent::print();
 }
 
-bool WindowComponent::isHidden() {
-    return false;
+void WindowComponent::setTitle(const string &title) {
+    mTitle = title;
 }
 
-void WindowComponent::moveOn(int x, int y) {
-
-}
-
-void WindowComponent::setPosition(int x, int y) {
-
-}
-
-void WindowComponent::setPosition(AbstractGraphicalComponent::Point) {
-
-}
-
-AbstractGraphicalComponent::Point WindowComponent::getPosition() {
-    return AbstractGraphicalComponent::Point();
+string WindowComponent::getTitle() {
+    return mTitle;
 }
