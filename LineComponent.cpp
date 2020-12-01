@@ -6,8 +6,9 @@
 #include "LineComponent.h"
 
 LineComponent::LineComponent(bool isHidden, Point downLeftCorner, Point upRightCorner)
-        : AbstractGraphicalComponent(isHidden, downLeftCorner, upRightCorner) {
-}
+        : AbstractGraphicalComponent(isHidden, downLeftCorner, upRightCorner) 
+		, mClassName("Line")
+{}
 
 void LineComponent::print() {
     std::cout << mClassName;

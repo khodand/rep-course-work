@@ -9,7 +9,11 @@ AbstractGraphicalComponent::AbstractGraphicalComponent(bool isHidden, Point down
                                                        : mIsHidden(isHidden)
                                                        , mDownLeftCorner(downLeftCorner)
                                                        , mUpRightCorner(upRightCorner)
+													   , mParent(nullptr)
                                                        {}
+
+AbstractGraphicalComponent::~AbstractGraphicalComponent()
+{}
 
 bool AbstractGraphicalComponent::isHidden() {
     return mIsHidden;

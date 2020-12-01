@@ -16,5 +16,5 @@ public:
     void activate();
 
 private:
-    const std::string mClassName {"Button"};
+    const std::string mClassName;
 };

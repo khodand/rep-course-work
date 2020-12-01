@@ -8,6 +8,7 @@
 TextComponent::TextComponent(const string &text, bool isHidden, Point downLeftCorner, Point upRightCorner)
         : AbstractGraphicalComponent(isHidden, downLeftCorner, upRightCorner)
         , mText(text)
+		, mClassName("Text")
         {}
 
 void TextComponent::setText(const string &text) {

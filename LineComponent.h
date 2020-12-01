@@ -13,6 +13,6 @@ public:
     void print() override;
 
 private:
-    const std::string mClassName {"Line"};
+    const std::string mClassName;
 };
 

@@ -5,6 +5,11 @@
 #include <iostream>
 #include "ButtonComponent.h"
 
+ButtonComponent::ButtonComponent(bool isHidden, Point downLeftCorner, Point upRightCorner)
+        : AbstractGraphicalComponent(isHidden, downLeftCorner, upRightCorner)
+		, mClassName("Button")
+{}
+
 void ButtonComponent::print() {
     std::cout << mClassName;
     AbstractGraphicalComponent::print();
@@ -12,9 +17,4 @@ void ButtonComponent::print() {
 
 void ButtonComponent::activate() {
     std::cout << "Button pressed";
-}
-
-ButtonComponent::ButtonComponent(bool isHidden, Point downLeftCorner, Point upRightCorner)
-        : AbstractGraphicalComponent(isHidden, downLeftCorner, upRightCorner) {
-
 }

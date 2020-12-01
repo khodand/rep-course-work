@@ -21,5 +21,5 @@ public:
 
 private:
     string mText;
-    const string mClassName {"Text"};
+    const string mClassName;
 };

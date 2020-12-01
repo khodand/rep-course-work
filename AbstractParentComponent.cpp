@@ -30,16 +30,16 @@ void AbstractParentComponent::removeChild(AbstractGraphicalComponent *child) {
 
 void AbstractParentComponent::moveOn(AbstractGraphicalComponent::Point p) {
     AbstractGraphicalComponent::moveOn(p);
-    for (auto &child : mChildren) {
-        child->moveOn(p);
+	for (auto c = mChildren.begin(); c != mChildren.end(); ++c) {
+        (*c)->moveOn(p);
     }
 }
 
 void AbstractParentComponent::print() {
     AbstractGraphicalComponent::print();
     std::cout << "{" << std::endl;
-    for (auto &child : mChildren) {
-        child->print();
+	for (auto c = mChildren.begin(); c != mChildren.end(); ++c) {
+        (*c)->print();
     }
     std::cout << "}" << std::endl;
 }

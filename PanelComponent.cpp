@@ -7,6 +7,7 @@
 
 PanelComponent::PanelComponent(bool isHidden, Point downLeftCorner, Point upRightCorner)
         : AbstractParentComponent(isHidden, downLeftCorner, upRightCorner)
+		, mClassName("Panel")
 {}
 
 void PanelComponent::print() {

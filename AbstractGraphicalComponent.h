@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <string>
+
 class AbstractGraphicalComponent {
 public:
     struct Point {
@@ -30,7 +32,7 @@ public:
 
     AbstractGraphicalComponent(bool isHidden, Point downLeftCorner, Point upRightCorner);
 
-    virtual ~AbstractGraphicalComponent() = default;
+    virtual ~AbstractGraphicalComponent();
 
     virtual bool isHidden();
 
@@ -44,7 +46,6 @@ public:
 
     virtual void setPosition(Point p);
 
-    /// Returns center of the component
     Point getPosition() const;
 
     Point getDownLeftCorner();
@@ -56,7 +57,7 @@ public:
     virtual void print();
 
 private:
-    AbstractGraphicalComponent *mParent {nullptr};
+    AbstractGraphicalComponent *mParent;
 
     bool mIsHidden;
 

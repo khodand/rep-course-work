@@ -9,3 +9,12 @@ cmake-build-*/
 
 # IntelliJ
 out/
+
+# Visual Studio
+Debug/
+ipch/
+*.sln
+*.sdf
+*.vcxproj*
+*.opensdf
+*.suo

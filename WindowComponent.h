@@ -22,8 +22,8 @@ public:
     string getTitle();
 
 private:
-    const string mClassName {"Window"};
+    const string mClassName;
 
-    string mTitle {};
+    string mTitle;
 };
 
